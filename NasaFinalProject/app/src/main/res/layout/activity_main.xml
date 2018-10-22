@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#121212"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#1a1818">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="401dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp" />
+
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteView"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="95dp"
+            android:background="@drawable/search_auto"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="    Search your country.."
+            android:textColor="#100f0f"
+            android:theme="@style/Autocomplete" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0b0a0a"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#0b0a0a"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:alpha="1"
+                    android:background="@null"
+                    android:elevation="20dp"
+                    android:onClick="maps"
+                    android:src="@drawable/near"
+                    app:layout_anchor="@+id/bottom_sheet" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:textColor="#ffff"
+                    android:layout_height="wrap_content"
+                    android:text="Near Me" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#0b0a0a"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:background="@null"
+                    android:elevation="20dp"
+                    android:onClick="help"
+                    android:src="@drawable/help"
+                    app:layout_anchor="@+id/bottom_sheet" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#ffff"
+                    android:text="Helpline" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#0b0a0a"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+
+
+                    android:background="@null"
+                    android:elevation="20dp"
+                    android:onClick="sos"
+                    android:src="@drawable/sos"
+                    app:layout_anchor="@+id/bottom_sheet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#ffff"
+                    android:text="Sos" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0b0a0a"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:background="@null"
+                    android:elevation="20dp"
+                    android:onClick="plan"
+                    android:src="@drawable/list"
+                    app:layout_anchor="@+id/bottom_sheet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#ffff"
+                    android:text="My Plan" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/hsv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="0"
+            android:background="@null"
+            android:fillViewport="true"
+            android:measureAllChildren="false"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:id="@+id/innerLay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#111010"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#0c0b0b"
+                    app:cardBackgroundColor="@android:color/background_dark">
+
+                    <LinearLayout
+                        android:layout_width="384dp"
+                        android:layout_height="158dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="#0c0b0b"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:id="@+id/event_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#000000"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textH"
+                                android:layout_width="369dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:text="Typhoon Mangkhut"
+                                android:textColor="#f6f2f2"
+                                android:textSize="36sp" />
+
+
+                            <LinearLayout
+                                android:id="@+id/details"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.8"
+                                android:background="#232222"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/details_img"
+                                    android:layout_width="57dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:src="@drawable/nasa" />
+
+                                <TextView
+                                    android:id="@+id/textViewEvent"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:text="Super typhoon Mangkhut slammed into the northern Philippines on September 15 with wind speeds equivalent to a category 5 hurricane."
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#232222"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/cyclone"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="Cyclones" />
+
+                            <Button
+                                android:id="@+id/news_cyclone"
+                                android:layout_width="182dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="News" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:background="@null"
+                    app:cardBackgroundColor="@android:color/background_dark"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="384dp"
+                        android:layout_height="158dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#0c0b0b"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#000000"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="369dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:text="Tsunami from Joaquin"
+                                android:textColor="#f6f2f2"
+                                android:textSize="36sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.8"
+                                android:background="#232222"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="57dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:src="@drawable/nasa" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:text="NASA's Aqua satellite captured this image of Joaquin near the Bahamas on Sept. 29 at 18:10 UTC (2:10 p.m. EDT). Credit: NASA Goddard MODIS Rapid Response Team At 11 a.m. "
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#232222"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/tsunami"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="Tsunami" />
+
+                            <Button
+                                android:id="@+id/news_tsunami"
+                                android:layout_width="182dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="News" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/background_dark">
+
+                    <LinearLayout
+                        android:layout_width="384dp"
+                        android:layout_height="158dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#0c0b0b"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#000000"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="369dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:text="Dust storm over japan"
+                                android:textColor="#f6f2f2"
+                                android:textSize="36sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.8"
+                                android:background="#232222"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="57dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:src="@drawable/nasa" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:text="March 24, 2010 - Dust over Japan This image of gray/brown dust being blown over Japan was captured on March 21, 2010 by the MODIS on the Terra satellite. On the left is the Korean peninsula."
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#232222"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/dust"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="Dust Storm" />
+
+                            <Button
+                                android:id="@+id/news_dust"
+                                android:layout_width="182dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="News" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@android:color/background_dark">
+
+                    <LinearLayout
+                        android:layout_width="384dp"
+                        android:layout_height="158dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#0c0b0b"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#000000"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="369dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:text="Flash Floods"
+                                android:textColor="#f6f2f2"
+                                android:textSize="36sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.8"
+                                android:background="#232222"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="57dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:src="@drawable/nasa" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:text="A flood-affected man carries the last of his belongings across the overflowing Deviyar river in Valara near Adimaly."
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#232222"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/floods"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="Floods" />
+
+                            <Button
+                                android:id="@+id/news_floods"
+                                android:layout_width="182dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="News" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    app:cardBackgroundColor="@android:color/background_dark"
+                    android:layout_marginRight="5dp"
+                    android:background="#0f0e0e">
+
+                    <LinearLayout
+                        android:layout_width="384dp"
+                        android:layout_height="158dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="#0c0b0b"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#000000"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="369dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top|left"
+                                android:text="Japan Earthquake"
+                                android:textColor="#f6f2f2"
+                                android:textSize="36sp" />
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.8"
+                                android:background="#232222"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="57dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.2"
+                                    android:src="@drawable/nasa" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.8"
+                                    android:text="This radar image from ESA Envisat depicts ground displacements resulting from the March 11, 2011, magnitude 9.0 Tohoku earthquake in Japan."
+                                    android:textColor="#ffffff"
+                                    android:textSize="15sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:alpha="0.8"
+                            android:background="#232222"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/earth"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="Earthquakes" />
+
+                            <Button
+                                android:id="@+id/news_earth"
+                                android:layout_width="182dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#C8B45527"
+                                android:text="News" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </FrameLayout>
+
+
+</LinearLayout>

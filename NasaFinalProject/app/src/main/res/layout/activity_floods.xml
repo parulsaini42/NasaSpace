@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Floods"
+    android:background="#161616">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="501dp"
+            android:layout_height="320dp"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/floods" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:paddingLeft="6dp"
+            android:text="Flash Floods"
+            android:textColor="#c8efeeee"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:paddingTop="12dp"
+            android:layout_height="162dp"
+            android:gravity="center_horizontal"
+            android:textColor="#c8b45527"
+            android:text="A flash flood is a rapid flooding of geomorphic low-lying areas: washes, rivers, dry lakes and basins. It may be caused by heavy rain associated with a severe thunderstorm, hurricane, tropical storm, or meltwater from ice or snow flowing over ice sheets or snowfields. Flash floods may occur after the collapse of a natural ice or debris dam, or a human structure such as a man-made dam, as occurred before the Johnstown Flood of 1889. Flash floods are distinguished from regular floods by having a timescale of less than six hours.[1] The water that is temporarily available is often used by plants with rapid germination and short growth cycles and by specially adapted animal life.
+"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:text="DO's"
+            android:textColor="#c8f1f1f1"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#c8b45527"
+            android:text="If a flood is likely to hit  your area, you should:listen to the radio or television for information.
+If you must prepare to evacuate, you should, Secure your home. If you have time, bring in outdoor furniture. Move essential items to an upper floor.
+Be aware that flash flooding can occur. If there is any possibility of a flash flood, move immediately to higher ground. Do not wait for instructions to move.
+"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:text="DON'Ts"
+            android:textColor="#c8f5edea"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#c8b45527"
+            android:gravity="center_horizontal"
+            android:text="Do not walk through moving water. Six inches of moving water can make you fall. If you have to walk in water, walk where the water is not moving. Use a stick to check the firmness of the ground in front of you.
+Do not drive into flooded areas. If floodwaters rise around your car, abandon the car and move to higher ground if you can do so safely. You and the vehicle can be quickly swept away.
+Avoid building in flood prone areas unless you elevate and reinforce your home.
+"/>
+        <VideoView
+            android:id="@+id/videoView1"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@android:color/transparent" />
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity" >
+
+
+            <VideoView
+                android:id="@+id/videoview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="8dp"
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

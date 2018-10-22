@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginTop="20dp"
+    android:background="#191818"
+    android:layout_height="match_parent"
+    tools:context=".sos"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:background="#ffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Send SOS"
+            android:textColor="#C8B45527"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name of Person"
+                android:textColor="#C8B45527"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/call"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:text="Contact Number"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/nname"
+                android:drawableStart="@drawable/nname"
+                android:hint="Name of first person"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/call1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/call"
+                android:drawableStart="@drawable/call"
+                android:hint="Phone Number of first person"
+                android:inputType="phone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/name2"
+                android:layout_width="196dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/nname"
+                android:drawableStart="@drawable/nname"
+                android:hint="Name of second person"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/call2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/call"
+                android:drawableStart="@drawable/call"
+                android:hint="Phone number of second person"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/txtv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/but"
+                android:layout_width="match_parent"
+                android:layout_height="73dp"
+                android:background="#C8B45527"
+                android:text="Save"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/but2"
+        android:layout_width="195dp"
+        android:layout_height="199dp"
+        android:elevation="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/search_icon"
+        android:text="SOS"
+        android:textSize="24dp" />
+</LinearLayout>
